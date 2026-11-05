@@ -1,0 +1,40 @@
+body {
+    background: #f5f5f5;
+    font-family: Arial, sans-serif;
+}
+
+
+.navbar h3 {
+    margin: 0;
+}
+
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 2px 8px #ccc;
+}
+
+
+table {
+    background: white;
+}
+
+
+th {
+    text-align: center;
+}
+
+
+td {
+    text-align: center;
+}
+
+
+button {
+    border-radius: 5px !important;
+}
+
+
+.container {
+    margin-bottom: 30px;
+}

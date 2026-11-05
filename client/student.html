@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Student Dashboard</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<nav class="navbar bg-primary p-3">
+
+<div class="container">
+
+<h4 class="text-white">
+Student Panel
+</h4>
+
+<button id="logoutBtn" class="btn btn-light">
+Logout
+</button>
+
+</div>
+
+</nav>
+
+
+
+<div class="container mt-4">
+
+
+<h3>
+Available Courses
+</h3>
+
+
+<table class="table table-bordered">
+
+<thead>
+
+<tr>
+<th>Code</th>
+<th>Name</th>
+<th>Credit</th>
+</tr>
+
+</thead>
+
+
+<tbody id="courseTable">
+
+</tbody>
+
+
+</table>
+
+
+</div>
+
+
+
+<script src="api.js"></script>
+
+<script>
+
+
+document.getElementById("logoutBtn").onclick=()=>{
+
+localStorage.clear();
+
+location.href="login.html";
+
+};
+
+
+
+async function loadCourses(){
+
+let data=await getCourses();
+
+let table=document.getElementById("courseTable");
+
+data.forEach(c=>{
+
+table.innerHTML+=`
+
+<tr>
+
+<td>${c.courseCode}</td>
+
+<td>${c.courseName}</td>
+
+<td>${c.credit}</td>
+
+</tr>
+
+`;
+
+});
+
+}
+
+
+loadCourses();
+
+
+</script>
+
+
+</body>
+
+</html>
